@@ -1,8 +1,8 @@
 import React from 'react';
-import data from './items';
+import defaultData from './items';
 
 export default function useMenuItems() {
-  const [unselectedItems, setUnselectedItems] = React.useState(data);
+  const [unselectedItems, setUnselectedItems] = React.useState(defaultData);
   const [selectedItems, setSelectedItems] = React.useState([]);
 
   const selectItem = (sourceIndex, destIndex) => {
