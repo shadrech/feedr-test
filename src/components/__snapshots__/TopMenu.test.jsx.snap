@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopMenu /> renders component with correct stats 1`] = `"<div class=\\"menu-summary\\"><div class=\\"container\\"><div class=\\"row\\"><div class=\\"col-6 menu-summary-left\\"><span>2 items</span></div><div class=\\"col-6 menu-summary-right\\"><span>2x <span class=\\"dietary\\">gf</span></span><span>1x <span class=\\"dietary\\">ab</span></span><span>1x <span class=\\"dietary\\">dc</span></span></div></div></div></div>"`;

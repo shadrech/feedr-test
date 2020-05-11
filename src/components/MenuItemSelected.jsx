@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const UnselectedMenuItem = ({ menuItem, unselectItem, dragRef, draggableProps, remove }) => {
+export const MenuItemSelected = ({ menuItem, unselectItem, dragRef, draggableProps, remove }) => {
   return (
-    <li ref={dragRef} {...draggableProps} className="item">
+    <li ref={dragRef} {...draggableProps} className="item selected">
       <h2>{menuItem.name}</h2>
       <p>
         {menuItem.dietaries.map(diet => <span key={diet} className="dietary">{diet}</span>)}

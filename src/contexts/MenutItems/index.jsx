@@ -3,7 +3,7 @@ import useMenuItems from './hook';
 
 const Context = React.createContext()
 
-export const useMenuItemsContext = () => {
+export const useContext = () => {
   const context = React.useContext(Context)
 
   if (!context) throw new Error('Cannot use useMenuItemContext when not within a MenuItemContextProvider');
@@ -11,7 +11,7 @@ export const useMenuItemsContext = () => {
   return context;
 }
 
-export function MenuItemsContextProvider(props) {
+export function ContextProvider(props) {
   const value = useMenuItems()
 
   return <Context.Provider {...props} value={value} />

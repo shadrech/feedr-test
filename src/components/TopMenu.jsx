@@ -1,8 +1,8 @@
 import React from 'react'
-import { useMenuItemsContext } from '../contexts/MenutItems'
+import * as menuItems from '../contexts/MenutItems'
 
 export const TopMenu = () => {
-  const { selectedItems } = useMenuItemsContext()
+  const { selectedItems } = menuItems.useContext()
   const dietaries = selectedItems.reduce((prev, curr) => {
     curr.dietaries.forEach(diet => {
       prev[diet] = !!prev[diet] ? ++prev[diet] : 1

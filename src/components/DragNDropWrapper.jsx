@@ -1,11 +1,11 @@
 import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { MenuItem } from './MenuItem';
-import { UnselectedMenuItem } from './UnselectedMenuItem';
-import { useMenuItemsContext } from '../contexts/MenutItems';
+import { MenuItemSelected } from './MenuItemSelected';
+import * as menuItems from '../contexts/MenutItems';
 
 export const DragNDropWrapper = () => {
-  const { unselectedItems, selectedItems, selectItem, unselectItem, removeSelectedItem } = useMenuItemsContext()
+  const { unselectedItems, selectedItems, selectItem, unselectItem, removeSelectedItem } = menuItems.useContext()
 
   const onDragEnd = result => {
     const { source, destination } = result;
@@ -49,7 +49,7 @@ export const DragNDropWrapper = () => {
                 {selectedItems.map((item, index) => (
                   <Draggable key={item.id} draggableId={String(item.id)} index={index}>
                     {(provided, snapshot) => (
-                      <UnselectedMenuItem menuItem={item} dragRef={provided.innerRef} draggableProps={{ ...provided.draggableProps, ...provided.dragHandleProps }} remove={() => removeSelectedItem(index)} />
+                      <MenuItemSelected menuItem={item} dragRef={provided.innerRef} draggableProps={{ ...provided.draggableProps, ...provided.dragHandleProps }} remove={() => removeSelectedItem(index)} />
                     )}
                   </Draggable>
                 ))}

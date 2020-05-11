@@ -1,17 +1,11 @@
 import React from 'react';
-import '@testing-library/dom';
-import { mockGetComputedSpacing } from 'react-beautiful-dnd-test-utils';
 import App from './App';
-import { renderApp } from './test.helpers';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-describe('<App />', () => {
+configure({ adapter: new Adapter() });
 
-  beforeAll(() => {
-    mockGetComputedSpacing()
-  })
-
-  it('renders', () => {
-    const { asFragment } = renderApp(<App />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-})
+it('renders', () => {
+  const div = shallow(<App />);
+  expect(div).toMatchSnapshot();
+});
